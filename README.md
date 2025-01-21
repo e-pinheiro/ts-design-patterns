@@ -21,11 +21,11 @@ Antes de começar, você precisa ter instalado em sua máquina:
 1. Clone o repositório
 
 bash
-git clone https://github.com/seu-usuario/nome-do-projeto.git
+git clone https://github.com/e-pinheiro/node-typescript-boilerplate
 
 2. Acesse a pasta do projeto
 ```bash
-cd nome-do-projeto
+cd node-typescript-boilerplate
 ```
 
 3. Instale as dependências
