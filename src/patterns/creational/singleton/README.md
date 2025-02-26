@@ -46,6 +46,11 @@ ProcessManager 2: 2025-02-26T13:51:03.908Z
 Only one instance of ProcessManager is created.
 ```
 
+## Coverage
+```shell
+npm run test:coverage
+```
+
 ## Testing
 Here's how to test the Singleton implementation:
 
