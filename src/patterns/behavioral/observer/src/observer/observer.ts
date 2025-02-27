@@ -5,19 +5,17 @@ export interface Observer<T> {
 
 // Define the Subject (Observable) base class
 export abstract class Subject<T> {
-  protected observers: Observer<T>[] = [];
+  private readonly observers: Set<Observer<T>> = new Set();
 
-  public subscribe(observer: Observer<T>): void {
-    if (!this.observers.includes(observer)) {
-      this.observers.push(observer);
-    }
+  public subscribe(observer: Observer<T>): () => void {
+    this.observers.add(observer);
+    
+    // Return unsubscribe function for convenience
+    return () => this.unsubscribe(observer);
   }
 
   public unsubscribe(observer: Observer<T>): void {
-    const index = this.observers.indexOf(observer);
-    if (index !== -1) {
-      this.observers.splice(index, 1);
-    }
+    this.observers.delete(observer);
   }
 
   protected notify(data: T): void {
